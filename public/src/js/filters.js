@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('lisk_explorer')
+angular.module('rise_explorer')
   .filter('startFrom', function () {
       return function (input, start) {
           start = +start;
@@ -75,7 +75,7 @@ angular.module('lisk_explorer')
           }
       };
   })
-  .filter('lisk', function () {
+  .filter('rise', function () {
       return function (amount) {
           if (isNaN(amount)) {
               return (0).toFixed(8);
@@ -93,9 +93,9 @@ angular.module('lisk_explorer')
           }
       };
   })
-  .filter('supply', function (liskFilter) {
+  .filter('supply', function (riseFilter) {
       return function (amount) {
-          return ((liskFilter(amount) / 100000000) * 100).toFixed(2);
+          return ((riseFilter(amount) / 100000000) * 100).toFixed(2);
       };
   })
   .filter('txSender', function () {

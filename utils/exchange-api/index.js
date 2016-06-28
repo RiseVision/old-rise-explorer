@@ -34,15 +34,15 @@ module.exports = function (config) {
                 }
             ]
         },
-        LISKBTC : {
-            poloniex : [
-                'Poloniex',
-                'https://poloniex.com/public?command=returnTicker',
+        RISEBTC : {
+            bittrex : [
+                'Bittrex',
+                'https://bittrex.com/api/v1.1/public/getticker?market=BTC-RISE',
                 function (res, cb) {
                     if (res.error) {
                         return cb(res.error);
                     } else {
-                        return cb(null, res.BTC_LSK.last);
+                        return cb(null, res.result.Last);
                     }
                 }
             ]
@@ -58,13 +58,13 @@ module.exports = function (config) {
         config.btcusdExchange = exchanges.BTCUSD.bitfinex;
     }
 
-    if (exchanges.LISKBTC.hasOwnProperty(config.liskbtcExchange)) {
-        config.liskbtcExchange = exchanges.LISKBTC[config.liskbtcExchange];
-        console.log('Exchange:', util.format('Configured %s as LISK/BTC exchange', config.liskbtcExchange[0]));
+    if (exchanges.RISEBTC.hasOwnProperty(config.risebtcExchange)) {
+        config.risebtcExchange = exchanges.RISEBTC[config.risebtcExchange];
+        console.log('Exchange:', util.format('Configured %s as RISE/BTC exchange', config.risebtcExchange[0]));
     } else {
-        console.log('Exchange:', 'Warning: Unrecognized LISK/BTC exchange!');
+        console.log('Exchange:', 'Warning: Unrecognized RISE/BTC exchange!');
         console.log('Exchange:', 'Defaulting to Poloniex...');
-        config.liskbtcExchange = exchanges.LISKBTC.poloniex;
+        config.risebtcExchange = exchanges.RISEBTC.poloniex;
     }
 
     var requestTicker = function (type, options, cb) {
@@ -86,8 +86,8 @@ module.exports = function (config) {
         getPriceTicker: function (type, cb) {
             if (type == 'BTCUSD') {
                 return requestTicker(type, config.btcusdExchange, cb);
-            } else if (type == 'LISKBTC') {
-                return requestTicker(type, config.liskbtcExchange, cb);
+            } else if (type == 'RISEBTC') {
+                return requestTicker(type, config.risebtcExchange, cb);
             } else {
                 return cb(util.format('Unrecognized \'%s\' ticker type!', type));
             }

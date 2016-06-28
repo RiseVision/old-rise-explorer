@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('lisk_explorer.tools')
+angular.module('rise_explorer.tools')
   .directive('orders', function () {
       return {
           restrict: 'E',

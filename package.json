@@ -1,13 +1,13 @@
 {
-  "name": "lisk-explorer",
+  "name": "rise-explorer",
   "version": "0.3.0",
-  "description": "Lisk blockchain explorer",
+  "description": "Rise blockchain explorer",
   "repository": {
     "type": "git",
-    "url": "git@github.com:LiskHQ/lisk-explorer.git"
+    "url": "git@github.com:RiseHQ/rise-explorer.git"
   },
   "private": true,
-  "author": "Boris Povod <boris@crypti.me>, Oliver Beddows <oliver@lisk.io>",
+  "author": "Boris Povod <boris@crypti.me>, Oliver Beddows <oliver@rise.io>",
   "license": "MIT",
   "main": "app.js",
   "scripts": {

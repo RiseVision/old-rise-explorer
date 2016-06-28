@@ -1,6 +1,6 @@
-# Lisk Blockchain Explorer
+# Rise Blockchain Explorer
 
-Lisk blockchain explorer version 0.3. Works with Lisk wallet API. Uses Redis for caching data and Freegeoip for IP geo-location.
+Rise blockchain explorer version 0.3. Works with Rise wallet API. Uses Redis for caching data and Freegeoip for IP geo-location.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Example:
             "host": "0.0.0.0",
             "port": 80
         },
-        "lisk" : {
+        "rise" : {
             "host" : "127.0.0.1",
             "port" : 8000
         },
@@ -69,13 +69,13 @@ Example:
         "enableExchange" : true,
         "updateExchangeInterval" : 900000,
         "btcusdExchange" : "bitfinex",
-        "liskbtcExchange" : "poloniex"
+        "risebtcExchange" : "poloniex"
     }
 }
 ```
 
 * `cacheTTL` - time to live cache in redis.
-* `fixedPoint` - fixed point number of Lisk (10^8).
+* `fixedPoint` - fixed point number of Rise (10^8).
 * `enableCandles` - enable or disable updating of candlestick data.
 * `updateCandlesInterval` - time to update candlestick data.
 * `enableOrders` - enable or disable updating of order book data.
@@ -83,7 +83,7 @@ Example:
 * `enableExchange` - enable or disable exchange currency courses.
 * `updateExchangeInterval` - time to update exchange currency courses.
 * `btcusdExchange` - default is bitfinex, alternatives are: bitstamp & btce.
-* `liskbtcExchange` - default is poloniex.
+* `risebtcExchange` - default is poloniex.
 
 ## Build
 
@@ -147,7 +147,7 @@ Ports for both mode can be found in `config.json`
 
 ## Top Accounts
 
-To enable Top Accounts functionality, start your lisk node _(not the explorer)_ using the following command:
+To enable Top Accounts functionality, start your rise node _(not the explorer)_ using the following command:
 
 ```
 TOP=true node app.js
@@ -157,7 +157,7 @@ TOP=true node app.js
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Lisk  
+Copyright (c) 2016 Rise
 Copyright (c) 2015 Crypti
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

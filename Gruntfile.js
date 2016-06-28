@@ -182,7 +182,7 @@ module.exports = function (grunt) {
         nggettext_compile: {
             all: {
                 options: {
-                    module: 'lisk_explorer'
+                    module: 'rise_explorer'
                 },
                 files: {
                     'public/src/js/translations.js': ['po/*.po']

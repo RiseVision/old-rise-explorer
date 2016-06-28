@@ -15,11 +15,11 @@ var app = express(), utils = require('./utils');
 app.candles = new utils.candles(config, client);
 app.exchange = new utils.exchange(config);
 app.knownAddresses = new utils.knownAddresses();
-app.orders = new utils.orders(config, client);
+//app.orders = new utils.orders(config, client);
 
 app.set('version', '0.3');
 app.set('strict routing', true);
-app.set('lisk address', 'http://' + config.lisk.host + ':' + config.lisk.port);
+app.set('rise address', 'http://' + config.rise.host + ':' + config.rise.port);
 app.set('freegeoip address', 'http://' + config.freegeoip.host + ':' + config.freegeoip.port);
 app.set('fixed point', config.fixedPoint);
 app.set('exchange enabled', config.enableExchange);
@@ -142,13 +142,13 @@ app.get('*', function (req, res, next) {
 
 async.parallel([
     function (cb) { app.exchange.loadBTCUSD(cb); },
-    function (cb) { app.exchange.loadLISKBTC(cb); }
+    function (cb) { app.exchange.loadRISEBTC(cb); }
 ], function (err) {
     var server = app.listen(app.get('port'), app.get('host'), function (err) {
         if (err) {
             console.log(err);
         } else {
-            console.log('Lisk started at ' + app.get('host') + ':' + app.get('port'));
+            console.log('Rise started at ' + app.get('host') + ':' + app.get('port'));
 
             var io = require('socket.io').listen(server);
             require('./sockets')(app, io);

@@ -16,15 +16,15 @@ var Header = function ($scope) {
     this.updatePriceTicker = function (res) {
         if (res.success) {
             $scope.btc_usd  = res.btc_usd;
-            $scope.lisk_btc = res.lisk_btc;
-            $scope.lisk_usd = res.lisk_usd;
+            $scope.rise_btc = res.rise_btc;
+            $scope.rise_usd = res.rise_usd;
         } else {
-            $scope.btc_usd = $scope.lisk_btc = $scope.lisk_usd = 0.0;
+            $scope.btc_usd = $scope.rise_btc = $scope.rise_usd = 0.0;
         }
     };
 };
 
-angular.module('lisk_explorer.system').factory('header',
+angular.module('rise_explorer.system').factory('header',
   function ($socket) {
       return function ($scope) {
           var header = new Header($scope),

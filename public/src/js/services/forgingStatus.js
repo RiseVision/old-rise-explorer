@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('lisk_explorer.tools').service('forgingStatus',
+angular.module('rise_explorer.tools').service('forgingStatus',
   function (epochStampFilter) {
       return function (delegate) {
           var status = { updatedAt: delegate.blocksAt },

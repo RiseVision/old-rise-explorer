@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><div class="logo" title="Lisk"></div></a>
+      <a class="navbar-brand" href="/"><div class="logo" title="Rise"></div></a>
     </div>
     <div class="collapse navbar-collapse" collapse="$root.isCollapsed">
       <form id="search-form" data-ng-controller="SearchController" class="navbar-form navbar-left hidden-xs" role="search" data-ng-submit="search()">
@@ -18,9 +18,9 @@
       </form>
       <div class="status" data-ng-show="blockStatus">
         <span class="height"><strong>Height: </strong> {{blockStatus.height}}</span>
-        <span class="supply">&middot; <strong>Supply: </strong> {{blockStatus.supply | lisk | number:0}}</span>
-        <span class="lisk-btc">&middot; <strong>LSK/BTC: </strong> {{lisk_btc}}</span>
-        <span class="lisk-usd">&middot; <strong>LSK/USD: </strong> {{lisk_usd}}</span>
+        <span class="supply">&middot; <strong>Supply: </strong> {{blockStatus.supply | rise | number:0}}</span>
+        <span class="rise-btc">&middot; <strong>RISE/BTC: </strong> {{rise_btc}}</span>
+        <span class="rise-usd">&middot; <strong>RISE/USD: </strong> {{rise_usd}}</span>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -35,14 +35,14 @@
             <li>
               <a href="/delegateMonitor">Delegate Monitor</a>
             </li>
-            <li>
+            <!--<li>
               <a href="/marketWatcher">Market Watcher</a>
-            </li>
+            </li>-->
             <li>
               <a href="/networkMonitor">Network Monitor</a>
             </li>
             <li>
-              <a href="https://login.lisk.io" target="_blank">Web Login</a>
+              <a href="https://wallet.rise.vision" target="_blank">Web Login</a>
             </li>
           </ul>
         </li>
